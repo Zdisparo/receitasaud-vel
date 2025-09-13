@@ -81,10 +81,32 @@
 
 <body class="antialiased relative bg-glow">
 
-  <!-- 🔴 Faixa vermelha de aviso -->
-  <div class="fixed top-0 left-0 w-full bg-red-600 text-white text-center font-bold py-2 z-50 text-sm sm:text-base shadow-lg">
-    ⚠️ Cuidado! Não feche essa página ainda
-  </div>
+  <!-- 🔴 Faixa vermelha de aviso responsiva -->
+<div id="aviso-faixa" class="fixed top-0 left-0 w-full bg-red-600 text-white text-center font-bold py-2 px-2 z-50 text-sm sm:text-base shadow-lg">
+  ⚠️ Cuidado! Não feche essa página ainda
+</div>
+
+<header class="relative z-10 overflow-hidden">
+  <!-- seu conteúdo -->
+</header>
+
+<script>
+  // Ajusta o padding do body para compensar a altura da faixa
+  window.addEventListener("load", function(){
+    var faixa = document.getElementById("aviso-faixa");
+    if(faixa){
+      document.body.style.paddingTop = faixa.offsetHeight + "px";
+    }
+  });
+  window.addEventListener("resize", function(){
+    var faixa = document.getElementById("aviso-faixa");
+    if(faixa){
+      document.body.style.paddingTop = faixa.offsetHeight + "px";
+    }
+  });
+</script>
+
+
 
   <header class="relative z-10 overflow-hidden mt-12">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white rounded-b-[2.5rem] shadow-2xl" data-aos="fade-down">
