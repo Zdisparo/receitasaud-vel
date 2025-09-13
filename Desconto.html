@@ -17,7 +17,7 @@
   a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
   document.head.appendChild(a);
 </script
-  
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -68,7 +68,6 @@
     .bg-glow::before{width:500px;height:500px;background:radial-gradient(circle,var(--cor-destaque),var(--cor-secundaria));top:-150px;left:-150px}
     .bg-glow::after{width:500px;height:500px;background:radial-gradient(circle,var(--cor-primaria),var(--cor-neon));bottom:-150px;right:-150px}
 
-
     /* Ícones de presente */
     .icon-gift{width:20px;height:20px;fill:url(#gift-gradient);}
     @keyframes pulseGift {
@@ -81,7 +80,13 @@
 
 
 <body class="antialiased relative bg-glow">
-  <header class="relative z-10 overflow-hidden">
+
+  <!-- 🔴 Faixa vermelha de aviso -->
+  <div class="fixed top-0 left-0 w-full bg-red-600 text-white text-center font-bold py-2 z-50 text-sm sm:text-base shadow-lg">
+    ⚠️ Cuidado! Não feche essa página ainda
+  </div>
+
+  <header class="relative z-10 overflow-hidden mt-12">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white rounded-b-[2.5rem] shadow-2xl" data-aos="fade-down">
       <div class="order-first md:order-none">
         <img src="https://tse2.mm.bing.net/th/id/OIP.KiZw2UPocQgN0ok8zl19oQHaLH?pid=Api" alt="Bolo gourmet sem glúten e sem açúcar" class="mx-auto rounded-2xl neon-border w-full max-w-[520px] h-auto"/>
@@ -92,11 +97,6 @@
           Oferta relâmpago: 90% desconto, não perca essa oportunidade.
         </h1>
         <p class="mt-3 text-base sm:text-lg text-gray-700">Não feche essa guia agora… Se você sair, essa condição especial desaparece para sempre!</p>
-
-
-       
-        <!-- ================================================================================ -->
-
 
         <div class="glass neon-border rounded-2xl p-4 mt-4 inline-flex items-center gap-3">
           <div class="text-center">
@@ -116,7 +116,7 @@
   </header>
 
 
-<!-- =================== BÔNUS GRATUITOS (COM ÍCONES PULSANDO) =================== -->
+<!-- =================== BÔNUS GRATUITOS =================== -->
         <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3" aria-label="Bônus gratuitos">
           <!-- Bônus 1 -->
           <div class="glass neon-border p-4 rounded-xl">
@@ -216,7 +216,3 @@ Com esta tabela prática e visual, você terá à mão as melhores opções de s
   </script>
 </body>
 </html>
-
-
-
-
