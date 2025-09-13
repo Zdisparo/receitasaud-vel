@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -16,8 +17,7 @@
   a.setAttribute("defer", "");
   a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
   document.head.appendChild(a);
-</script>
-
+</script
 
 <head>
   <meta charset="utf-8" />
@@ -31,9 +31,9 @@
   <style>
     :root{
       --cor-fundo:#fdfaf6;
-      --cor-primaria:#8b4513;   /* chocolate */
+      --cor-primaria:#8b4513; /* chocolate */
       --cor-secundaria:#d4a373; /* caramelo */
-      --cor-destaque:#c49e71;   /* ouro velho */
+      --cor-destaque:#c49e71; /* ouro velho */
       --cor-letra:#3b2f2f;
       --cor-neon:#ffdd99;
       --overlay:rgba(255,255,255,.75);
@@ -56,45 +56,8 @@
     .floaty{animation:floaty 4s ease-in-out infinite}
     @keyframes shake{0%,100%{transform:translate(0,0)}20%{transform:translate(-1px,1px)}40%{transform:translate(1px,-1px)}60%{transform:translate(-1px,1px)}80%{transform:translate(1px,0)}}
     .shake-hard{animation:shake .6s infinite}
-
-    /* === CARROSSEL DEPOIMENTOS (loop contínuo) === */
-    .depo-wrapper{position:relative;overflow:hidden}
-    .depo-track{
-      display:flex;align-items:center;gap:1rem;
-      width:max-content;
-      animation:scrollLeft 55s linear infinite;
-      will-change:transform;
-    }
-    /* velocidade mais lenta em telas maiores (percepção de suavidade) */
-    @media (min-width:768px){ .depo-track{ animation-duration:65s; } }
-    @media (min-width:1024px){ .depo-track{ animation-duration:75s; } }
-
-    @keyframes scrollLeft{
-      from{ transform:translateX(0); }
-      to{   transform:translateX(-50%); } /* metade porque duplicamos o conteúdo */
-    }
-    .depo-card{
-      height:160px;width:auto;
-      border-radius:0.75rem;
-      object-fit:cover;
-    }
-    @media (min-width:640px){ .depo-card{ height:200px; } }
-    @media (min-width:1024px){ .depo-card{ height:240px; } }
-
-    /* fade nas bordas (sem quebrar clique) */
-    .depo-fade:before,.depo-fade:after{
-      content:"";position:absolute;top:0;height:100%;width:48px;pointer-events:none;z-index:2;
-    }
-    .depo-fade:before{left:0;background:linear-gradient(to right,var(--cor-fundo),transparent);}
-    .depo-fade:after{right:0;background:linear-gradient(to left,var(--cor-fundo),transparent);}
-
-    /* pausa opcional no hover (desktop) */
-    .depo-wrapper:hover .depo-track{ animation-play-state:paused; }
-
-    /* acessibilidade: usuários que preferem reduzir movimento */
-    @media (prefers-reduced-motion: reduce){
-      .depo-track{ animation:none; }
-    }
+    .btn-whatsapp{background-color:#25D366;color:#fff;font-weight:600}
+    .btn-whatsapp:hover{filter:brightness(1.1)}
   </style>
 </head>
 <body class="antialiased relative bg-glow">
@@ -116,7 +79,6 @@
       </div>
     </div>
   </header>
-
   <!-- ========= BLOCO APRESENTAÇÃO ========= -->
   <section class="relative z-10 py-10 sm:py-14">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
@@ -224,37 +186,34 @@
   </section>
 
   <!-- ========= DEPOIMENTOS ========= -->
-<section class="py-20 relative z-10 bg-[#f7f2ec]">
-  <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-center text-3xl md:text-4xl font-black mb-12" data-aos="fade-up">
-      O que dizem sobre as receitas
-    </h2>
+  <section class="py-20 relative z-10 bg-[#f7f2ec]">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-center text-3xl md:text-4xl font-black mb-12" data-aos="fade-up">
+        O que dizem sobre as receitas
+      </h2>
 
-    <!-- Perfil insta -->
-    <div class="glass neon-border rounded-2xl p-6 mb-10" data-aos="fade-up">
-      <img src="./perfil.png" 
-           alt="Depoimento de cliente satisfeito"
-           class="w-full rounded-xl shadow-lg object-cover">
+      <!-- Perfil insta -->
+      <div class="glass neon-border rounded-2xl p-6 mb-10" data-aos="fade-up">
+        <img src="./perfil.png"
+             alt="Depoimento de cliente satisfeito"
+             class="w-full rounded-xl shadow-lg object-cover">
+      </div>
+
+      <!-- Depoimento 1 -->
+      <div class="glass neon-border rounded-2xl p-6 mb-10" data-aos="fade-up">
+        <img src="./dep1.jpg"
+             alt="Depoimento de cliente satisfeito"
+             class="w-full rounded-xl shadow-lg object-cover">
+      </div>
+
+      <!-- Depoimento 2 -->
+      <div class="glass neon-border rounded-2xl p-6" data-aos="fade-up" data-aos-delay="150">
+        <img src="./dep2.jpg"
+             alt="Depoimento de cliente satisfeito"
+             class="w-full rounded-xl shadow-lg object-cover">
+      </div>
     </div>
-
-    <!-- Depoimento 1 -->
-    <div class="glass neon-border rounded-2xl p-6 mb-10" data-aos="fade-up">
-      <img src="./dep1.jpg" 
-           alt="Depoimento de cliente satisfeito"
-           class="w-full rounded-xl shadow-lg object-cover">
-    </div>
-
-    <!-- Depoimento 2 -->
-    <div class="glass neon-border rounded-2xl p-6" data-aos="fade-up" data-aos-delay="150">
-      <img src="./dep2.jpg" 
-           alt="Depoimento de cliente satisfeito"
-           class="w-full rounded-xl shadow-lg object-cover">
-    </div>
-
-  </div>
-</section>
-
-
+  </section>
   <!-- ========= OFERTA ========= -->
   <section class="py-14 sm:py-20 relative z-10">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
@@ -270,11 +229,14 @@
           <li>🍮 Bônus: guia de decoração & cobertura refinada</li>
           <li>🔥 Técnicas de confeitaria que garantem textura e apresentação premium</li>
         </ul>
-        <a id="oferta" href="https://pay.cakto.com.br/znshw5w_565764" class="btn-brand inline-block w-full sm:w-auto px-8 py-3 sm:py-4 mt-6 sm:mt-8 rounded-full text-lg sm:text-2xl shadow-lg transform hover:scale-105 transition-all duration-300">👉 Liberar Bolos Gourmet Agora!</a>
-      </div>
-    </div>
-  </section>
 
+        <!-- Botão principal -->
+        <a id="oferta" href="https://pay.cakto.com.br/znshw5w_565764"
+           class="btn-brand inline-block w-full sm:w-auto px-8 py-3 sm:py-4 mt-6 sm:mt-8 rounded-full text-lg sm:text-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
+           👉 Liberar Bolos Gourmet Agora!
+        </a>
+
+       
   <!-- ========= GARANTIA ========= -->
   <section class="py-14 sm:py-20 bg-[#f7f2ec] relative z-10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-12 items-center">
@@ -302,40 +264,37 @@
   </section>
 
   <!-- ========= SOBRE A AUTORA ========= -->
-<section class="py-20 relative z-10 bg-white">
-  <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-    
-    <!-- Foto da autora -->
-    <div data-aos="fade-right">
-      <img src="./autora.jpg" 
-           alt="Foto da autora do livro de receitas"
-           class="w-full rounded-2xl neon-border object-cover shadow-xl">
-    </div>
-
-    <!-- Texto -->
-    <div data-aos="fade-left" class="text-center md:text-left">
-      <h3 class="text-xl font-bold text-gray-600">Sobre a Autora,</h3>
-      <h2 class="text-3xl md:text-4xl font-black text-[var(--cor-primaria)] mb-6">Lara Vencato</h2>
-      
-      <p class="text-gray-700 leading-relaxed mb-6">
-        A paixão da Lara por guloseimas se transformou em arte saudável.  
-        Durante anos ela testou e aperfeiçoou receitas sem glúten e sem açúcar, criando bolos irresistíveis sem abrir mão da saúde.
-      </p>
-
-      <div class="glass rounded-xl p-5 mb-6 text-gray-800 font-medium">
-        “Acredito que qualquer um consegue preparar doces incríveis com as ferramentas certas.  
-        Meu objetivo é que você sinta orgulho de cada bolo feito em casa.”
+  <section class="py-20 relative z-10 bg-white">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <!-- Foto da autora -->
+      <div data-aos="fade-right">
+        <img src="./autora.jpg"
+             alt="Foto da autora do livro de receitas"
+             class="w-full rounded-2xl neon-border object-cover shadow-xl">
       </div>
 
-      <a href="#oferta" 
-         class="btn-brand inline-block px-10 py-4 rounded-xl text-lg font-extrabold shadow-lg transform hover:scale-105 transition-all duration-300">
-         Baixar Minha Cópia 🍰
-      </a>
+      <!-- Texto -->
+      <div data-aos="fade-left" class="text-center md:text-left">
+        <h3 class="text-xl font-bold text-gray-600">Sobre a Autora,</h3>
+        <h2 class="text-3xl md:text-4xl font-black text-[var(--cor-primaria)] mb-6">Lara Vencato</h2>
+
+        <p class="text-gray-700 leading-relaxed mb-6">
+          A paixão da Lara por guloseimas se transformou em arte saudável.  
+          Durante anos ela testou e aperfeiçoou receitas sem glúten e sem açúcar, criando bolos irresistíveis sem abrir mão da saúde.
+        </p>
+
+        <div class="glass rounded-xl p-5 mb-6 text-gray-800 font-medium">
+          “Acredito que qualquer um consegue preparar doces incríveis com as ferramentas certas.  
+          Meu objetivo é que você sinta orgulho de cada bolo feito em casa.”
+        </div>
+
+        <a href="#oferta"
+           class="btn-brand inline-block px-10 py-4 rounded-xl text-lg font-extrabold shadow-lg transform hover:scale-105 transition-all duration-300">
+           Baixar Minha Cópia 🍰
+        </a>
+      </div>
     </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- ========= FOOTER ========= -->
   <footer class="py-8 sm:py-10 text-center text-gray-500 text-xs sm:text-sm border-t border-gray-300">
@@ -345,5 +304,62 @@
   <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init({duration:1000,mirror:true,once:false});</script>
+
+
+<script>
+(function () {
+  const BACK_URL = "https://receitasaud-vel.onrender.com/Desconto";
+  let armed = true;
+  let navigating = false;
+
+  // Desarma nos CTAs
+  document.addEventListener("click", function (e) {
+    const a = e.target.closest("a");
+    if (a && a.href) {
+      navigating = true;
+      armed = false;
+      setTimeout(() => { navigating = false; armed = true; }, 1500);
+    }
+  }, true);
+
+  // Trap do botão voltar
+  function trapHistory() {
+    try { history.pushState({}, "", location.href); } catch(e) {}
+  }
+  trapHistory();
+  setTimeout(trapHistory, 60);
+
+  window.addEventListener("popstate", function () {
+    if (armed) {
+      location.replace(BACK_URL);
+    } else {
+      setTimeout(trapHistory, 100);
+    }
+  });
+
+  // Fecha aba ou troca app (iOS/Android/PC)
+  window.addEventListener("pagehide", function () {
+    if (armed && !navigating) {
+      location.replace(BACK_URL);
+    }
+  });
+
+  // Aba em background
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "hidden" && armed && !navigating) {
+      location.replace(BACK_URL);
+    }
+  });
+
+  // Volta de background (iOS específico)
+  window.addEventListener("pageshow", function (e) {
+    if (e.persisted && armed && !navigating) {
+      location.replace(BACK_URL);
+    }
+  });
+})();
+</script>
+
+
 </body>
 </html>
