@@ -75,36 +75,26 @@
       50% { transform: scale(1.2); filter: drop-shadow(0 0 12px var(--cor-destaque)); }
     }
     .pulse { animation: pulseGift 1.8s infinite ease-in-out; }
+
+    /* Centralização e segurança nas bordas em telas com notch */
+#aviso-faixa{
+  padding-left: max(env(safe-area-inset-left), .5rem);
+  padding-right: max(env(safe-area-inset-right), .5rem);
+  text-align: center;
+}
+
+    
   </style>
 </head>
 
 
-<body class="antialiased relative bg-glow">
-
-  <!-- 🔴 Faixa vermelha de aviso responsiva -->
-<div id="aviso-faixa" class="fixed top-0 left-0 w-full bg-red-600 text-white text-center font-bold py-2 px-2 z-50 text-sm sm:text-base shadow-lg">
+<div id="aviso-faixa"
+     class="fixed top-0 inset-x-0 bg-red-600 text-white font-bold py-2 px-2 z-50 text-sm sm:text-base shadow-lg flex justify-center items-center text-center">
   ⚠️ Cuidado! Não feche essa página ainda
 </div>
 
-<header class="relative z-10 overflow-hidden">
-  <!-- seu conteúdo -->
-</header>
 
-<script>
-  // Ajusta o padding do body para compensar a altura da faixa
-  window.addEventListener("load", function(){
-    var faixa = document.getElementById("aviso-faixa");
-    if(faixa){
-      document.body.style.paddingTop = faixa.offsetHeight + "px";
-    }
-  });
-  window.addEventListener("resize", function(){
-    var faixa = document.getElementById("aviso-faixa");
-    if(faixa){
-      document.body.style.paddingTop = faixa.offsetHeight + "px";
-    }
-  });
-</script>
+
 
 
 
